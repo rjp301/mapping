@@ -12,6 +12,9 @@ def colour_scale(c1,c2,num_col=2):
   colours = [[int(i) for i in j] for j in colours]
   return colours
 
+def colour_interp(c1:list, c2:list, v1:float, v2:float, v:float):
+  return [int(c1[i] + (v - v1) * (c2[i] - c1[i]) / (v2 - v1)) for i in range(3)]
+
 def colour_rainbow(length):
   frequency = 0.8
   p1,p2,p3 = 0,2,4
