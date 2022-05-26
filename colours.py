@@ -13,6 +13,7 @@ def colour_scale(c1,c2,num_col=2):
   return colours
 
 def colour_interp(c1:list, c2:list, v1:float, v2:float, v:float):
+  if v1 == v2: return c1
   return [int(c1[i] + (v - v1) * (c2[i] - c1[i]) / (v2 - v1)) for i in range(3)]
 
 def colour_rainbow(length):

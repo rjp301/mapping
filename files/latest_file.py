@@ -1,7 +1,7 @@
 import os
 import datetime as dt
 
-def latest_file(path,date_format="%Y %m %d",prefix="",suffix="",silent=False) -> tuple:
+def latest_file(path,date_format="%Y %m %d",prefix=" - ",suffix="",silent=False) -> tuple:
   files = os.listdir(path)
   files = [i for i in files if not (i.startswith(".") or i.startswith("~"))]
   file_date = []
