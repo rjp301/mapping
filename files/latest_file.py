@@ -13,7 +13,9 @@ def latest_file(path,date_format="%Y %m %d",prefix=" - ",suffix="",silent=False)
       elif suffix: date_str = name[:name.index(suffix)]
       else: date_str = name
     except ValueError as e:
-      if not silent: print(f"ERROR: {prefix} or {suffix} is not contained within {name}")
+      if not silent:
+        print(f"ERROR: {prefix} or {suffix} is not contained within {name}")
+        print(e)
       continue
     
     try:
